@@ -1,0 +1,26 @@
+using System;
+
+namespace PrimePairs
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n1 = int.Parse(Console.ReadLine());
+            int n2 = int.Parse(Console.ReadLine());
+            int firstDif = int.Parse(Console.ReadLine());
+            int secondDif = int.Parse(Console.ReadLine());
+
+            for (int a = n1; a <= n1 + firstDif; a++)
+            {
+                for (int b = n2; b <= n2 + secondDif; b++)
+                {
+                    if (a % 2 != 0 && a % 3 != 0 && a % 5 != 0 && a % 7 != 0 && b % 2 != 0 && b % 3 != 0 && b % 5 != 0 && b % 7 != 0)
+                    {
+                        Console.WriteLine($"{a}{b}");
+                    }
+                }
+            }
+        }
+    }
+}
