@@ -1,0 +1,34 @@
+using System;
+
+namespace LetterCombinations
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char first = char.Parse(Console.ReadLine());
+            char second = char.Parse(Console.ReadLine());
+            char missedLetter = char.Parse(Console.ReadLine());
+            int count = 0;
+            for (char i = first; i <= second; i++)
+            {
+                for (char j = first; j <= second; j++)
+                {
+                    for (char m = first; m <= second; m++)
+                    {
+                        if (i == missedLetter || j == missedLetter || m == missedLetter)
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            count++;
+                            Console.Write($"{i}{j}{m} ");
+                        }
+                    }
+                }
+            }
+            Console.WriteLine(count);
+        }
+    }
+}
