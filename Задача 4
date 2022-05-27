@@ -1,0 +1,51 @@
+using System;
+
+namespace luckyNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int first = int.Parse(Console.ReadLine());
+            int second = int.Parse(Console.ReadLine());
+            for (int n1 = first; n1 <= second; n1++)
+            {
+                for (int n2 = first; n2 <= second; n2++)
+                {
+                    for (int n3 = first; n3 <= second; n3++)
+                    {
+                        for (int n4 = first; n4 < n1; n4++)
+                        {
+                            if (n1 > n4)
+                            {
+                                if (n1 % 2 == 0)
+                                {
+                                    if (n4 % 2 != 0)
+                                    {
+                                        if ((n1 - n4) % 2 != 0 && (n2 + n3) % 2 == 0)
+                                        {
+                                            Console.Write($"{n1}{n2}{n3}{n4} ");
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if (n4 % 2 == 0)
+                                    {
+                                        if (n1 % 2 != 0)
+                                        {
+                                            if ((n1 - n4) % 2 != 0 && (n2 + n3) % 2 == 0)
+                                            {
+                                                Console.Write($"{n1}{n2}{n3}{n4} ");
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
