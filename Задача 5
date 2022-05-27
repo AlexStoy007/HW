@@ -1,0 +1,33 @@
+using System;
+
+namespace Wedding
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int men = int.Parse(Console.ReadLine());
+            int women = int.Parse(Console.ReadLine());
+            int tables = int.Parse(Console.ReadLine());
+            int tablesTaken = 0;
+            bool noTables = false;
+            for (int a = 1; a <= men; a++)
+            {
+                for (int b = 1; b <= women; b++)
+                {
+                    if (tablesTaken == tables)
+                    {
+                        noTables = true;
+                        break;
+                    }
+                    Console.Write($"({a} <‐> {b}) ");
+                    tablesTaken++;
+                }
+                if (noTables)
+                {
+                    break;
+                }
+            }
+        }
+    }
+}
